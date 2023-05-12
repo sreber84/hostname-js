@@ -1,6 +1,7 @@
 FROM registry.fedoraproject.org/fedora:latest
 
 RUN dnf install -y nodejs
-COPY run /
+
+COPY app.js /opt/app.js
     
-CMD ["sh", "run"]
+CMD ["exec", "node", "/opt/app.js"]
